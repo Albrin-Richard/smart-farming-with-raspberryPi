@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smart farming</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <!-- javascript -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <script type="text/javascript" src="js/GaugeMeter.js"></script>
+    <script type="text/javascript" src="js/mqtt.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+    <style>
+        /* Some custom styles to beautify this example */
+        #demo-content-left {
+            padding: 15px;
+            font-size: 18px;
+            background: #dbdfe5;
+            margin: 10px;
+            text-align: center;
+
+
+        }
+
+        #demo-content-right {
+            padding: 15px;
+            font-size: 18px;
+            background: #dbdfe5;
+            margin: 10px;
+            text-align: center;
+
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        #icon {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        body {
+            background-color: #000000;
+        }
+
+        .GaugeMeter {
+            position: Relative;
+            text-align: Center;
+            overflow: Hidden;
+            cursor: Default;
+            display: inline-block;
+        }
+
+        .GaugeMeter SPAN,
+        .GaugeMeter B {
+            width: 60%;
+            position: Absolute;
+            text-align: Center;
+            display: inline-block !important;
+            color: #000000 !important;
+            font-weight: 100;
+            font-family: "Open Sans", Arial;
+            overflow: Hidden;
+            white-space: NoWrap;
+            text-overflow: Ellipsis;
+            margin: 0 23%;
+
+        }
+
+        .GaugeMeter[data-style="Semi"] B {
+            width: 80%;
+            margin: 0 10%;
+            color: #000000
+        }
+
+        .GaugeMeter S,
+        .GaugeMeter U {
+            text-decoration: None;
+            font-size: .60em;
+            font-weight: 200;
+            opacity: .6;
+        }
+
+        .GaugeMeter B {
+            color: rgb(0, 0, 0);
+            font-weight: 200;
+            opacity: .8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--Row with two equal columns-->
+        <div class="row">
+            <div class="col-xl" id="demo-content-left">
+                <div class="row d-flex justify-content-center">
+                    <img id="icon" src="tomato.jpeg" alt="Avatar">
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <h2>Tomato Pot</h2>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="GaugeMeter" id="tomato-gague" data-percent="0" data-append="%" data-size="200"
+                        data-theme="Red-Gold-Green" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors="1"
+                        data-animate_text_colors="1" data-width="15" data-label="moisture" data-style="Arch"
+                        data-label_color="#FFF"></div>
+                </div>
+				<div class="row d-flex justify-content-center">
+					<button id="tomato-pump-button" style="margin-top: 2%" type="button" class="btn btn-success" onclick="pump_button_toggle.call(this)">Turn on pump</button>
+				</div>
+                <div class="row d-flex justify-content-center">
+                    <h3 style="margin-top: 10%">Overall moisture levels</h3>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <canvas id="tomato" ></canvas>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <h3 style="margin-top: 10%">Daily moisture level trend</h3>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <canvas id="tomato-trend"></canvas>
+                </div>
+
+            </div>
+            <div class="col-xl" id="demo-content-right" class="d-inline-flex p-2">
+                <div class="row d-flex justify-content-center">
+                    <img id="icon" src="chilli.jpeg" alt="Avatar">
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <h2>Chilli Pot</h2>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="GaugeMeter" id="chilli-gague" data-percent="0" data-append="%" data-size="200"
+                        data-theme="Red-Gold-Green" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors="1"
+                        data-animate_text_colors="1" data-width="15" data-label="moisture" data-style="Arch"
+                        data-label_color="#FFF"></div>
+                </div>
+				<div class="row d-flex justify-content-center">
+					<button id="chilli-pump-button" type="button" class="btn btn-success" onclick="pump_button_toggle.call(this)">Turn on pump</button>
+				</div>
+                <div class="row d-flex justify-content-center">
+                    <h3 style="margin-top: 10%">Overall moisture levels</h3>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <canvas id="chilli" ></canvas>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <h3 style="margin-top: 10%">Daily moisture level trend</h3>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <canvas id="chilli-trend"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
