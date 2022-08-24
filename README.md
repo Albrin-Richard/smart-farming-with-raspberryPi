@@ -68,6 +68,19 @@ Programs needed for uploding code onto NODE-MCU(ESP8266) :
 ### Pump turn on/off, with timer
 <img src="./images/pump-on-off.gif" width="800">
 
+## Flask Server Log
+<img src="./images/serverLog.png" width="500">
+
+## Android Application
+
+### Dashboard page
+<img src="./images/dashboard.png" height="400">
+
+### Chilli plant page
+<img src="./images/chilliGraph.png" height="400">
+
+### Dashboard page
+<img src="./images/tomatoGraph.png" height="400">
 
 ## Video demonstration of project and its working
 
