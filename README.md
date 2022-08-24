@@ -79,7 +79,7 @@ Programs needed for uploding code onto NODE-MCU(ESP8266) :
 ### Chilli plant page
 <img src="./images/chilliGraph.png" height="400">
 
-### Dashboard page
+### Tomato plant page
 <img src="./images/tomatoGraph.png" height="400">
 
 ## Video demonstration of project and its working
