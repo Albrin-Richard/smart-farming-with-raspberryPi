@@ -10,6 +10,9 @@ This repo is organized as below
 │       └── tomato-esp8266.ino  #Code that is uploaded to NODE-MCU(ESP8266) in tomato pot
 ├── python_mqtt_client 
 │   └── mqtt_client.py          #MQTT python client that is running on raspberry-pi and listening to messages from Nodes
+│
+├── Flask server
+│   └── server.py               #Server script to run Flask backend server   
 ├── README.md
 ├── Android Application
 │   ├── Smart Farming App       #Android studio files
