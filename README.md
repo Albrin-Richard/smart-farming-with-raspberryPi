@@ -11,6 +11,10 @@ This repo is organized as below
 ├── python_mqtt_client 
 │   └── mqtt_client.py          #MQTT python client that is running on raspberry-pi and listening to messages from Nodes
 ├── README.md
+├── Android Application
+│   ├── Smart Farming App       #Android studio files
+│   └── Smart Farming.apk       #Android app apk
+│
 └── webserver                   #All files that are responsible for creating Web dashboard
     ├── bootstrap.min.css       #CSS downloaded from web (Not claiming ownership)
     ├── chilli.jpeg             #Jpeg downloaded from web (Not claiming ownership)
@@ -68,7 +72,16 @@ Programs needed for uploding code onto NODE-MCU(ESP8266) :
 ### Pump turn on/off, with timer
 <img src="./images/pump-on-off.gif" width="800">
 
-## Flask Server Log
+## Flask Backend Server
+
+To install Flask
+```bash
+   pip3 install Flask
+   pip3 install Flask-RESTful
+```   
+Run server.py and send HTTP request to server
+
+### Flask Server Log
 <img src="./images/serverLog.png" width="500">
 
 ## Android Application
